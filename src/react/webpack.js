@@ -9,7 +9,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = () => ({
     entry: './src/index.js',
     output: {
-      path: path.resolve(__dirname, 'dist'),
+      path: path.resolve(process.cwd(), 'dist'),
       filename: 'index.js',
     },
     module: {
@@ -31,4 +31,7 @@ module.exports = () => ({
             filename: "./index.html"
         }),
     ],
+    resolve: {
+        extensions: ['.js', '.jsx'],
+    },
 });
