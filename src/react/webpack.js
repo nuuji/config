@@ -1,10 +1,24 @@
 /**
  * PEER DEPS:
- * webpack / webpack-dev-server
+ * - webpack
+ * - webpack-dev-server
  */
+const fs = require('fs');
 const path = require('path');
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const plugins = [];
+
+(function addHtmlPlugin(plugins) {
+    const INDEX_HTML_PATH = './src/index.html';
+    const needsPlugin = fs.existsSync(path.join(process.cwd(), INDEX_HTML_PATH));
+
+    if (needsPlugin) {
+        plugins.push(new require('html-webpack-plugin')({
+            template: INDEX_HTML_PATH,
+            filename: "./index.html"
+        }));
+    }
+})(plugins);
 
 module.exports = () => ({
     entry: './src/index.js',
@@ -25,12 +39,7 @@ module.exports = () => ({
             },
         ],
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: "./src/index.html",
-            filename: "./index.html"
-        }),
-    ],
+    plugins,
     resolve: {
         extensions: ['.js', '.jsx'],
     },
