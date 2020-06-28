@@ -32,5 +32,8 @@
   "peerDependencies": {
     "webpack": "^4.43.0",
     "webpack-dev-server": "^3.11.0"
+  },
+  "devDependencies": {
+    "rollup-plugin-preserve-shebang": "^1.0.1"
   }
 }
