@@ -9,6 +9,7 @@ module.exports = () => {
             {
                 file: "lib/index.js",
                 format: "cjs",
+                inlineDynamicImports: true,
             },
         ],
         // TODO https://github.com/rollup/plugins/tree/master/packages/babel#babelhelpers

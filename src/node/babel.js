@@ -1,11 +1,12 @@
 const isTest = process.env.NODE_ENV === "test";
 
-module.exports = () => ({
+module.exports = ({ targets }) => ({
     presets: [
         [
             "@babel/env",
             {
                 modules: isTest ? "commonjs" : false,
+                targets,
             },
         ],
     ],

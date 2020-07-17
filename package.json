@@ -4,6 +4,9 @@
   "version": "0.2.4",
   "main": "src/index.js",
   "license": "MIT",
+  "bin": {
+    "nji-config": "./src/cli/index.js"
+  },
   "dependencies": {
     "@babel/core": "^7.9.6",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
