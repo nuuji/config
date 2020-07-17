@@ -1,7 +1,7 @@
 {
   "name": "@nuuji/config",
   "description": "Shared configs for JS development",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "main": "src/index.js",
   "license": "MIT",
   "bin": {
