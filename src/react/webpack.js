@@ -13,7 +13,7 @@ const plugins = [];
     const needsPlugin = fs.existsSync(path.join(process.cwd(), INDEX_HTML_PATH));
 
     if (needsPlugin) {
-        plugins.push(new require('html-webpack-plugin')({
+        plugins.push(new (require('html-webpack-plugin'))({
             template: INDEX_HTML_PATH,
             filename: "./index.html"
         }));
